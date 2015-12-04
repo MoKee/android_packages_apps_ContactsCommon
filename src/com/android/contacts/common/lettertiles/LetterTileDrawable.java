@@ -183,7 +183,7 @@ public class LetterTileDrawable extends Drawable {
             canvas.drawText(sFirstChar, 0, 1, bounds.centerX(),
                     bounds.centerY() + mOffset * bounds.height() + sRect.height() / 2,
                     sPaint);
-        } else if (mDisplayName != null && com.mokee.text.TextUtis.isChineseLetter(mDisplayName.charAt(0))) {
+        } else if (mDisplayName != null && com.mokee.text.TextUtils.isChineseLetter(mDisplayName.charAt(0))) {
             // Draw letter/digit only if the first character is a chinese letter
             // Draw letter or digit.
             sFirstChar[0] = Character.toUpperCase(mDisplayName.charAt(0));
