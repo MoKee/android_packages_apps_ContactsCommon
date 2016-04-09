@@ -49,6 +49,7 @@ import com.android.contacts.common.preference.ContactsPreferences;
 import com.android.contacts.common.util.Constants;
 import com.android.contacts.common.MoreContactUtils;
 import com.android.contacts.common.model.account.SimAccountType;
+import com.mokee.cloud.location.OfflineNumber;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -476,6 +477,8 @@ public class PhoneNumberListAdapter extends ContactEntryListAdapter {
         final String text;
         if (displayNumber) {
             text = cursor.getString(PhoneQuery.PHONE_NUMBER);
+            label = OfflineNumber.detect(text, getContext());
+            view.setLabel(label);
         } else {
             // Display phone label. If that's null, display geocoded location for the number
             final String phoneLabel = cursor.getString(PhoneQuery.PHONE_LABEL);
