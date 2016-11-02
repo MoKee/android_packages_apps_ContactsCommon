@@ -129,6 +129,16 @@ public class ContactsPreferences implements OnSharedPreferenceChangeListener {
         return mSortOrder;
     }
 
+    public int getCallLogDeleteLimit() {
+        return Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.CALL_LOG_DELETE_LIMIT, 500);
+    }
+
+    public void setCallLogDeleteLimit(int limit) {
+        Settings.System.putInt(mContext.getContentResolver(),
+                Settings.System.CALL_LOG_DELETE_LIMIT, limit);
+    }
+
     public void setSortOrder(int sortOrder) {
         mSortOrder = sortOrder;
         final Editor editor = mPreferences.edit();
