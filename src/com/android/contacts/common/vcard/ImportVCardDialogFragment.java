@@ -20,12 +20,15 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.android.contacts.common.R;
 
 /** Asks for confirmation before importing contacts from a vcard. */
 public class ImportVCardDialogFragment extends DialogFragment {
+
+    static final String TAG = "importVCardDialog";
 
     /** Callbacks for hosts of the {@link ImportVCardDialogFragment}. */
     public interface Listener {
@@ -45,11 +48,12 @@ public class ImportVCardDialogFragment extends DialogFragment {
         }
 
         final ImportVCardDialogFragment dialog = new ImportVCardDialogFragment();
-        dialog.show(activity.getFragmentManager(), "importVCardDialogFragment");
+        dialog.show(activity.getFragmentManager(), TAG);
     }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
         return new AlertDialog.Builder(getActivity())
                 .setIconAttribute(android.R.attr.alertDialogIcon)
                 .setMessage(R.string.import_from_vcf_file_confirmation_message)
