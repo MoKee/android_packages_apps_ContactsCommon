@@ -17,4 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Call Log Delete Limit  -->
+  <string name="call_log_delete_limit_title">Had senarai panggilan</string>
+  <string name="call_log_delete_limit_summary">Teruskan <xliff:g id="count"> log pemanggil</string>
+  <string name="call_log_delete_limit_default">500 (Asal)</string>
+  <string name="call_log_delete_limit_nolimit">Tanpa menghadkan</string>
 </resources>
