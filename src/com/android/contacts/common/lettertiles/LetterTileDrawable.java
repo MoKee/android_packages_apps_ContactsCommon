@@ -308,7 +308,7 @@ public class LetterTileDrawable extends Drawable {
                 && isEnglishLetter(displayName.charAt(0))) {
             mLetter = Character.toUpperCase(displayName.charAt(0));
         } else if (displayName != null && displayName.length() > 0
-                && com.mokee.text.TextUtils.isChineseLetter(displayName.charAt(0))) {
+                && com.mokee.utils.TextUtils.isChineseLetter(displayName.charAt(0))) {
             mLetter = Character.toUpperCase(displayName.charAt(0));
             mIsChineseLetter = true;
         } else {
